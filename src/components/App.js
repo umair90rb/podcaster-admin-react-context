@@ -15,6 +15,7 @@ import Users from "./Users";
 import PaymentRequests from "./PaymentRequests";
 import UserBug from "./UserBug";
 import MentorBug from "./MentorBug";
+import PasswordReset from "./PasswordReset";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <PrivateRoute exact path="/mentors" component={Podcasters} />
               <PrivateRoute exact path="/users" component={Users} />
               <PrivateRoute exact path="/user-app-bugs" component={UserBug} />
+              <Route exact path="/reset-password" component={PasswordReset} />
               <PrivateRoute
                 exact
                 path="/mentor-app-bugs"

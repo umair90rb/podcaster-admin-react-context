@@ -12,6 +12,8 @@ function Dashboard(props) {
     userAppBugs,
     mentorAppBugs,
     paymentRequests,
+    calls,
+    chats,
   } = useData();
   return (
     <div className="w-100">
@@ -89,6 +91,25 @@ function Dashboard(props) {
               </Card.Body>
             </Card>
           </Link>
+        </Col>
+        <Col md={4}>
+          {/* <Link to="/payment-requests"> */}
+          <Card bg="secondary">
+            <Card.Body>
+              <p className="text-white">Total Call Sessions ({calls.length})</p>
+            </Card.Body>
+          </Card>
+          {/* </Link> */}
+        </Col>
+
+        <Col md={4}>
+          {/* <Link to="/payment-requests"> */}
+          <Card bg="secondary">
+            <Card.Body>
+              <p className="text-white">Total Chat Session ({chats.length})</p>
+            </Card.Body>
+          </Card>
+          {/* </Link> */}
         </Col>
       </Row>
     </div>

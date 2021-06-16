@@ -13,6 +13,8 @@ export function DataProvider({ children }) {
   const [paymentRequests, setPaymentRequests] = useState([]);
   const [earning, setEarning] = useState(0);
   const [mentors, setMentors] = useState([]);
+  const [calls, setCalls] = useState([]);
+  const [chats, setChats] = useState([]);
   const [mentorAppBugs, setMentorAppBugs] = useState([]);
   const [userAppBugs, setUserAppBugs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,6 +34,19 @@ export function DataProvider({ children }) {
       .then((payments) => {
         setPaymentRequests(payments.docs);
       });
+
+    db.collection("call")
+      .get()
+      .then((calls) => {
+        setCalls(calls.docs);
+      });
+
+    db.collection("msgRequest")
+      .get()
+      .then((chat) => {
+        setChats(chat.docs);
+      });
+
     db.collection("bugs")
       .get()
       .then((bugs) => {
@@ -68,6 +83,8 @@ export function DataProvider({ children }) {
     paymentRequests,
     transactions,
     earning,
+    calls,
+    chats,
   };
 
   return (
