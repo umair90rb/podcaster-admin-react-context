@@ -15,6 +15,7 @@ function Podcasters(props) {
       .onSnapshot((querySnapshot) => {
         var mentors = [];
         querySnapshot.forEach((doc) => {
+          console.log(doc.data().docs);
           mentors.push(doc);
         });
         setPodcasters(mentors);
@@ -44,6 +45,8 @@ function Podcasters(props) {
           <tr>
             <th>Email</th>
             <th>Experties</th>
+            <th>Id</th>
+            <th>Docs</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -52,6 +55,23 @@ function Podcasters(props) {
             <tr key={podcaster.id}>
               <td>{podcaster.data().email}</td>
               <td>{podcaster.data().experties}</td>
+              <td>
+                <a target="_blank" href={podcaster.data().id}>
+                  Id
+                </a>
+              </td>
+              <td>
+                {podcaster.data().docs != undefined &&
+                  podcaster.data().docs.map((d) => (
+                    <ul>
+                      <li>
+                        <a target="_blank" href={d}>
+                          Doc
+                        </a>
+                      </li>
+                    </ul>
+                  ))}
+              </td>
               <td>
                 <Button
                   disabled={
