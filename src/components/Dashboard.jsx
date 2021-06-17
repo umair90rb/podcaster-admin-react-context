@@ -53,7 +53,9 @@ function Dashboard(props) {
         <Col>
           <Card bg="info">
             <Card.Body>
-              <p className="text-white">Total Earning(${earning}) </p>
+              <p className="text-white">
+                Total Earning(${Math.floor(earning)}){" "}
+              </p>
             </Card.Body>
           </Card>
         </Col>
@@ -81,7 +83,7 @@ function Dashboard(props) {
         </Col>
       </Row>
       <Row className="mt-5 w-100">
-        <Col md={4}>
+        <Col>
           <Link to="/payment-requests">
             <Card bg="secondary">
               <Card.Body>
@@ -92,7 +94,7 @@ function Dashboard(props) {
             </Card>
           </Link>
         </Col>
-        <Col md={4}>
+        <Col>
           {/* <Link to="/payment-requests"> */}
           <Card bg="secondary">
             <Card.Body>
@@ -102,7 +104,7 @@ function Dashboard(props) {
           {/* </Link> */}
         </Col>
 
-        <Col md={4}>
+        <Col>
           {/* <Link to="/payment-requests"> */}
           <Card bg="secondary">
             <Card.Body>

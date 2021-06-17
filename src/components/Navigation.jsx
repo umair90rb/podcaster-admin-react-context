@@ -56,6 +56,9 @@ function Navigation(props) {
             <NavLink className="nav-link" to="/mentor-app-bugs">
               Mentor App Bug
             </NavLink>
+            <NavLink className="nav-link" to="/add-featured-podcast">
+              Add Featured Podcast
+            </NavLink>
           </Nav>
         )}
         {currentUser !== null && (

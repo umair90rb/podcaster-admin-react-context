@@ -27,9 +27,9 @@ function Profile(props) {
           {error && <Alert variant="danger">{error}</Alert>}
           {status && <Alert variant="success">{status}</Alert>}
           <div>Email : {currentUser.email}</div>
-          <Link to="/update-profile" className="btn btn-primary w-100">
+          {/* <Link to="/update-profile" className="btn btn-primary w-100">
             Update Profile
-          </Link>
+          </Link> */}
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">

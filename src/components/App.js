@@ -16,6 +16,7 @@ import PaymentRequests from "./PaymentRequests";
 import UserBug from "./UserBug";
 import MentorBug from "./MentorBug";
 import PasswordReset from "./PasswordReset";
+import Featured from "./Featured";
 
 function App() {
   return (
@@ -47,6 +48,11 @@ function App() {
                 component={Transactions}
               />
               <PrivateRoute exact path="/" component={Dashboard} />
+              <PrivateRoute
+                exact
+                path="/add-featured-podcast"
+                component={Featured}
+              />
               <Route path="/login" component={Login} />
             </Switch>
           </Container>
